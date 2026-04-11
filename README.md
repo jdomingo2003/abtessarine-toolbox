@@ -1,10 +1,10 @@
-# ABTessarine_Toolbox
+# abtessarine_Toolbox
 
 **Version:** 1.0.0 (SoftwareX Submission)
 **Date:** 11-Apr-2026
 
 ## Overview
-The **ABTessarine_Toolbox** is a high-performance, object-oriented MATLAB library designed for the analysis and manipulation of commutative hypercomplex algebras. 
+The **abtessarine_Toolbox** is a high-performance, object-oriented MATLAB library designed for the analysis and manipulation of commutative hypercomplex algebras. 
 
 This toolbox provides a robust computational framework for **$\alpha\beta$-tessarines** ($\alpha \in \mathbb{R}\setminus\{0\}, \beta > 0$), a 4-dimensional hypercomplex algebra that encompasses generalized Segre's quaternions (GSQ) and elliptic quaternions as particular cases. Unlike traditional non-commutative quaternions, tessarines preserve both commutativity and associativity, which significantly enhances their compatibility with advanced linear algebra methods and spectral theory. 
 
