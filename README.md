@@ -109,7 +109,12 @@ When $\alpha$ is negative or zero, the 8D generalization becomes mathematically 
     % with an alpha <= 0 environment will throw a safety error.
 
 ## Illustrative Examples
-For a complete demonstration of the toolbox in action, navigate to the `examples/` directory and run `example_application.m`. This script benchmarks the code against standard `for`-loops and applies the algebra to image compression and linear kinematics.
+For a complete demonstration of the toolbox in action, navigate to the `examples/` directory. The included scripts showcase the software's capabilities across four distinct domains:
+
+* **Signal Processing:** Color image compression via hypercomplex SVD.
+* **Physics & Robotics:** Solving kinematic linear systems under noise.
+* **High-Performance Computing:** Benchmarking native vectorized operations against standard `for`-loops.
+* **Machine Learning:** Fast, derivative-free training of hypercomplex neural networks (ELM classifiers).
 
 ## Theoretical Background and Citation
 This software is the computational implementation of the theoretical methods described in the accompanying research paper. The algorithms strictly follow the algebraic rules and properties derived for $\alpha\beta$-tessarine spectral theory, including eigendecompositions, isomorphisms, and least squares problem solvers.
