@@ -21,7 +21,10 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
   * `test_03...` *(Advanced factorizations and spectral theory)*
   * `test_gabtessarine.m` *(8D algebra validation suite)*
 * `examples/` 
-  * `example_application.m` *(Real-world illustrative applications)*
+  * `example_1.m` *(Signal Processing: Color image compression via hypercomplex SVD)*
+  * `example_2.m` *(Physics & Robotics: Solving kinematic linear systems under noise)*
+  * `example_3.m` *(High-Performance Computing: Scalability benchmark vs for-loops)*
+  * `example_4.m` *(Machine Learning: Fast analytical training of ELM classifiers)*
 * `setabtessarine.m` *(Global topological parameter configuration)*
 * `getabtessarine.m` *(Retrieves current global parameters)*
 * `abteye.m`, `gabteye.m` *(Identity matrices generation)*
