@@ -13,8 +13,39 @@ Furthermore, the toolbox extends this mathematical framework to an 8-dimensional
 ## Repository Structure
 To maintain a clean architecture, the toolbox is structured into core classes, root-level generators, and validation suites. The complete file structure is as follows:
 
-* `@abtessarine/` *(Contains all overloaded methods and the core 4D class definition)*
-* `@gabtessarine/` *(Contains all overloaded methods and the core 8D class definition)*
+* <details>
+  <summary><b>@abtessarine/</b> <i>(Contains all overloaded methods and the core 4D class definition)</i></summary>
+
+  | | | | |
+  | :--- | :--- | :--- | :--- |
+  | `abtessarine` | `associated` | `augmented` | `cat` |
+  | `chol` | `conj_i` | `conj_j` | `conj_k` |
+  | `ctranspose` | `det` | `diag` | `diff` |
+  | `disp` | `eig` | `eigs` | `hermitian` |
+  | `horzcat` | `inv` | `kron` | `length` |
+  | `lu` | `minus` | `mldivide` | `mpower` |
+  | `mrdivide` | `mtimes` | `ndims` | `norm` |
+  | `permute` | `pinv` | `plus` | `power` |
+  | `prod` | `qr` | `repmat` | `reshape` |
+  | `size` | `sqrtm` | `squeeze` | `subsasgn` |
+  | `subsref` | `sum` | `svd` | `svds` |
+  | `times` | `trace` | `transpose` | `uminus` |
+  | `uplus` | `vertcat` | | |
+
+  </details>
+
+* <details>
+  <summary><b>@gabtessarine/</b> <i>(Contains all overloaded methods and the core 8D class definition)</i></summary>
+
+  | | | | |
+  | :--- | :--- | :--- | :--- |
+  | `disp` | `gabtessarine` | `horzcat` | `inv` |
+  | `kron` | `minus` | `mtimes` | `plus` |
+  | `size` | `sqrtm` | `subsasgn` | `subsref` |
+  | `times` | `uminus` | `vertcat` | |
+
+  </details>
+
 * `tests/` 
   * `test_01...` *(Basic functionality and properties)*
   * `test_02...` *(Matrix operations and calculus)*
