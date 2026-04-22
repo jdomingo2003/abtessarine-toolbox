@@ -10,11 +10,12 @@ This toolbox provides a robust computational framework for **$\alpha\beta$-tessa
 
 Furthermore, the toolbox extends this mathematical framework to an 8-dimensional algebra known as **generalized $\alpha\beta$-tessarines** ($\mathbb{G}_{\alpha\beta}$) via the Cayley-Dickson construction ($x = x_1 + x_2 \epsilon$, where $\epsilon^2 = -1$).
 
-## Repository Structure
-To maintain a clean architecture, the toolbox is structured into core classes, root-level generators, and validation suites. The complete file structure is as follows:
+## 📂 Repository Structure
+
+To maintain a clean architecture, the toolbox is structured into core classes, root-level generators, and a dual-tier validation suite.
 
 * <details>
-  <summary><b>@abtessarine/</b> <i>(Contains all overloaded methods and the core 4D class definition)</i></summary>
+  <summary><b>@abtessarine/</b> <i>(Core 4D Parametric Tessarine Class)</i></summary>
 
   | | | | |
   | :--- | :--- | :--- | :--- |
@@ -35,7 +36,7 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
   </details>
 
 * <details>
-  <summary><b>@gabtessarine/</b> <i>(Contains all overloaded methods and the core 8D class definition)</i></summary>
+  <summary><b>@gabtessarine/</b> <i>(Generalized 8D Hypercomplex Class)</i></summary>
 
   | | | | |
   | :--- | :--- | :--- | :--- |
@@ -46,62 +47,75 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
 
   </details>
 
-* <details>
-  <summary><b>tests/</b> <i>(Contains all overloaded methods and the core 8D class definition)</i></summary>
+* <details open>
+  <summary><b>tests/</b> <i>(Validation Framework)</i></summary>
 
   * <details>
-  <summary><b>individual_tests/</b> <i>(Contains all overloaded methods and the core 8D class definition)</i></summary>
+    <summary><b>general_tests/</b> <i>(High-level algebraic & stress tests)</i></summary>
 
-  
-  </details>
+    * `test_01_CORE_properties.m`
+    * `test_02_matrix_calculus.m`
+    * `test_03_advanced_factorizations.m`
+    * `test_04_gabtessarine_algebra.m`
+    </details>
 
-  </details>
-`tests/` 
-  * general_tests
-    * `test_01...` *(Basic functionality and properties)*
-    * `test_02...` *(Matrix operations and calculus)*
-    * `test_03...` *(Advanced factorizations and spectral theory)*
-    * `test_gabtessarine.m` *(8D algebra validation suite)*
-  * individual_tests
+  * <details open>
+    <summary><b>individual_tests/</b> <i>(Unit-level verification)</i></summary>
+
     * <details>
-  <summary><b>tests_@abtessarine/</b> <i>(Contains all tests for overloaded methods in abtessarine class)</i></summary>
+      <summary>📂 <b>tests_@abtessarine/</b> <i>(Contains unit tests for all 4D methods)</i></summary>
 
-  | | | | |
-  | :--- | :--- | :--- | :--- |
-  | `test_abtessarine` | `test_associated` | `test_augmented` | `test_cat` |
-  | `test_chol` | `test_conj_i` | `test_conj_j` | `test_conj_k` |
-  | `test_ctranspose` | `test_det` | `test_diag` | `test_diff` |
-  | `test_disp` | `test_eig` | `test_eigs` | `test_hermitian` |
-  | `test_horzcat` | `test_inv` | `test_kron` | `test_length` |
-  | `test_lu` | `test_minus` | `test_mldivide` | `test_mpower` |
-  | `test_mrdivide` | `test_mtimes` | `test_ndims` | `test_norm` |
-  | `test_permute` | `test_pinv` | `test_plus` | `test_power` |
-  | `test_prod` | `test_qr` | `test_repmat` | `test_reshape` |
-  | `test_size` | `test_sqrtm` | `test_squeeze` | `test_subsasgn` |
-  | `test_subsref` | `test_sum` | `test_svd` | `test_svds` |
-  | `test_times` | `test_trace` | `test_transpose` | `test_uminus` |
-  | `test_uplus` | `test_vertcat` | | |
+      | | | | |
+      | :--- | :--- | :--- | :--- |
+      | `test_abtessarine.m` | `test_associated.m` | `test_augmented.m` | `test_cat.m` |
+      | `test_chol.m` | `test_conj_i.m` | `test_conj_j.m` | `test_conj_k.m` |
+      | `test_ctranspose.m` | `test_det.m` | `test_diag.m` | `test_diff.m` |
+      | `test_disp.m` | `test_eig.m` | `test_eigs.m` | `test_hermitian.m` |
+      | `test_horzcat.m` | `test_inv.m` | `test_kron.m` | `test_length.m` |
+      | `test_lu.m` | `test_minus.m` | `test_mldivide.m` | `test_mpower.m` |
+      | `test_mrdivide.m` | `test_mtimes.m` | `test_ndims.m` | `test_norm.m` |
+      | `test_permute.m` | `test_pinv.m` | `test_plus.m` | `test_power.m` |
+      | `test_prod.m` | `test_qr.m` | `test_repmat.m` | `test_reshape.m` |
+      | `test_size.m` | `test_sqrtm.m` | `test_squeeze.m` | `test_subsasgn.m` |
+      | `test_subsref.m` | `test_sum.m` | `test_svd.m` | `test_svds.m` |
+      | `test_times.m` | `test_trace.m` | `test_transpose.m` | `test_uminus.m` |
+      | `test_uplus.m` | `test_vertcat.m` | | |
 
-  </details>
+      </details>
+
     * <details>
-  <summary><b>tests_@gabtessarine/</b> <i>(Contains all tests for overloaded methods in gabtessarine class)</i></summary>
-  
-  | | | | |
-  | :--- | :--- | :--- | :--- |
-  | `test_disp` | `test_gabtessarine` | `test_horzcat` | `test_inv` |
-  | `test_kron` | `test_minus` | `test_mtimes` | `test_plus` |
-  | `test_size` | `test_sqrtm` | `test_subsasgn` | `test_subsref` |
-  | `test_times` | `test_uminus` | `test_vertcat` | |
+      <summary>📂 <b>tests_@gabtessarine/</b> <i>(Contains unit tests for all 8D methods)</i></summary>
 
+      | | | | |
+      | :--- | :--- | :--- | :--- |
+      | `test_disp.m` | `test_gabtessarine.m` | `test_horzcat.m` | `test_inv.m` |
+      | `test_kron.m` | `test_minus.m` | `test_mtimes.m` | `test_plus.m` |
+      | `test_size.m` | `test_sqrtm.m` | `test_subsasgn.m` | `test_subsref.m` |
+      | `test_times.m` | `test_uminus.m` | `test_vertcat.m` | |
+
+      </details>
+
+    * 📄 `test_abt2gabt.m`
+    * 📄 `test_abteye.m` / `test_gabteye.m`
+    * 📄 `test_abtones.m`
+    * 📄 `test_abtpdm.m`
+    * 📄 `test_abtrand.m` / `test_gabtrand.m`
+    * 📄 `test_abtrandn.m` / `test_gabtrandn.m`
+    * 📄 `test_abtzeros.m` / `test_gabtzeros.m`
+    * 📄 `test_getabtessarine.m`
+    * 📄 `test_setabtessarine.m`
+    </details>
   </details>
-    * test_abt2gabt
 
+* <details>
+  <summary><b>examples/</b> <i>(Application Tutorials)</i></summary>
 
-* `examples/` 
   * `example_1.m` *(Signal Processing: Color image compression via hypercomplex SVD)*
   * `example_2.m` *(Physics & Robotics: Solving kinematic linear systems under noise)*
   * `example_3.m` *(High-Performance Computing: Scalability benchmark vs for-loops)*
   * `example_4.m` *(Machine Learning: Fast analytical training of ELM classifiers)*
+  </details>
+
 * `setabtessarine.m` *(Global topological parameter configuration)*
 * `getabtessarine.m` *(Retrieves current global parameters)*
 * `abteye.m`, `gabteye.m` *(Identity matrices generation)*
