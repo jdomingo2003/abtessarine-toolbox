@@ -46,7 +46,17 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
 
   </details>
 
-* `tests/` 
+* <details>
+  <summary><b>tests/</b> <i>(Contains all overloaded methods and the core 8D class definition)</i></summary>
+
+  * <details>
+  <summary><b>individual_tests/</b> <i>(Contains all overloaded methods and the core 8D class definition)</i></summary>
+
+  
+  </details>
+
+  </details>
+`tests/` 
   * general_tests
     * `test_01...` *(Basic functionality and properties)*
     * `test_02...` *(Matrix operations and calculus)*
