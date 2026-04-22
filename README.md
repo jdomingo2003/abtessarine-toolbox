@@ -47,10 +47,19 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
   </details>
 
 * `tests/` 
-  * `test_01...` *(Basic functionality and properties)*
-  * `test_02...` *(Matrix operations and calculus)*
-  * `test_03...` *(Advanced factorizations and spectral theory)*
-  * `test_gabtessarine.m` *(8D algebra validation suite)*
+  * general_tests
+    * `test_01...` *(Basic functionality and properties)*
+    * `test_02...` *(Matrix operations and calculus)*
+    * `test_03...` *(Advanced factorizations and spectral theory)*
+    * `test_gabtessarine.m` *(8D algebra validation suite)*
+  * individual_tests
+    * tests_@abtessarine
+      * test_abtessarine
+    * tests_@gabtessarine
+      * test_gabtessarine
+    * test_abt2gabt
+
+
 * `examples/` 
   * `example_1.m` *(Signal Processing: Color image compression via hypercomplex SVD)*
   * `example_2.m` *(Physics & Robotics: Solving kinematic linear systems under noise)*
