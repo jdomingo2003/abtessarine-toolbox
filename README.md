@@ -53,10 +53,37 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
     * `test_03...` *(Advanced factorizations and spectral theory)*
     * `test_gabtessarine.m` *(8D algebra validation suite)*
   * individual_tests
-    * tests_@abtessarine
-      * test_abtessarine
-    * tests_@gabtessarine
-      * test_gabtessarine
+    * <details>
+  <summary><b>tests_@abtessarine/</b> <i>(Contains all tests for overloaded methods in abtessarine class)</i></summary>
+
+  | | | | |
+  | :--- | :--- | :--- | :--- |
+  | `test_abtessarine` | `test_associated` | `test_augmented` | `test_cat` |
+  | `test_chol` | `test_conj_i` | `test_conj_j` | `test_conj_k` |
+  | `test_ctranspose` | `test_det` | `test_diag` | `test_diff` |
+  | `test_disp` | `test_eig` | `test_eigs` | `test_hermitian` |
+  | `test_horzcat` | `test_inv` | `test_kron` | `test_length` |
+  | `test_lu` | `test_minus` | `test_mldivide` | `test_mpower` |
+  | `test_mrdivide` | `test_mtimes` | `test_ndims` | `test_norm` |
+  | `test_permute` | `test_pinv` | `test_plus` | `test_power` |
+  | `test_prod` | `test_qr` | `test_repmat` | `test_reshape` |
+  | `test_size` | `test_sqrtm` | `test_squeeze` | `test_subsasgn` |
+  | `test_subsref` | `test_sum` | `test_svd` | `test_svds` |
+  | `test_times` | `test_trace` | `test_transpose` | `test_uminus` |
+  | `test_uplus` | `test_vertcat` | | |
+
+  </details>
+    * <details>
+  <summary><b>tests_@gabtessarine/</b> <i>(Contains all tests for overloaded methods in gabtessarine class)</i></summary>
+  
+  | | | | |
+  | :--- | :--- | :--- | :--- |
+  | `test_disp` | `test_gabtessarine` | `test_horzcat` | `test_inv` |
+  | `test_kron` | `test_minus` | `test_mtimes` | `test_plus` |
+  | `test_size` | `test_sqrtm` | `test_subsasgn` | `test_subsref` |
+  | `test_times` | `test_uminus` | `test_vertcat` | |
+
+  </details>
     * test_abt2gabt
 
 
