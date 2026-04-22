@@ -63,8 +63,8 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
 * `abtones.m` *(Arrays of ones)*
 * `abtrand.m`, `gabtrand.m` *(Uniformly distributed random arrays)*
 * `abtrandn.m`, `gabtrandn.m` *(Normally distributed random arrays)*
-* `buildgabt.m` *(Constructs 8D Cayley-Dickson matrices from 4D arrays)*
-* `generatePositiveDefinite.m` *(Generates positive-definite hypercomplex matrices)*
+* `abt2gabt.m` *(Constructs 8D Cayley-Dickson matrices from 4D arrays)*
+* `abtpdm.m` *(Generates positive-definite hypercomplex matrices)*
 
 ## Comprehensive Capabilities
 
@@ -72,8 +72,8 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
 * **Environment:** `setabtessarine` (Global topological parameter configuration) and `getabtessarine` (Environment retrieval).
 * **Generators:** `abtzeros` and `gabtzeros` (Zero-cost memory allocation), `abteye` and `gabteye` (Identity matrices), `abtones` (Array of ones).
 * **Stochastic Arrays:** Uniform (`abtrand`, `gabtrand`) and normally distributed (`abtrandn`, `gabtrandn`) random array generators.
-* **8D Assembly:** `buildgabt` (Constructs 8D Cayley-Dickson matrices directly from 4D arrays).
-* **Positive Definite Systems:** `generatePositiveDefinite` (Generates strictly positive-definite hypercomplex matrices for stability in factorizations).
+* **8D Assembly:** `abt2gabt` (Constructs 8D Cayley-Dickson matrices directly from 4D arrays).
+* **Positive Definite Systems:** `abtpdm` (Generates strictly positive-definite hypercomplex matrices for stability in factorizations).
 
 ### 2. Advanced Matrix Factorizations & Spectral Theory
 Unlike standard tools, this toolbox provides full native support for hypercomplex matrix decompositions avoiding massive `for`-loops:
