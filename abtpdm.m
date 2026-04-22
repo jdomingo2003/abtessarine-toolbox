@@ -1,9 +1,9 @@
-function X = generatePositiveDefinite(n, alpha, beta)
-% GENERATEPOSITIVEDEFINITE Generates a positive definite abtessarine matrix.
-%   X = GENERATEPOSITIVEDEFINITE(N) creates an N-by-N positive definite
+function X = abtpdm(n, alpha, beta)
+% ABTPDM Generates a positive definite abtessarine matrix.
+%   X = abtpdm(N) creates an N-by-N positive definite
 %   hypercomplex matrix using the globally defined alpha and beta parameters.
 %
-%   X = GENERATEPOSITIVEDEFINITE(N, ALPHA, BETA) creates the matrix using
+%   X = abtpdm(N, ALPHA, BETA) creates the matrix using
 %   the explicitly provided topological parameters ALPHA and BETA.
 %
 %   The algorithm automatically adapts to generate a 1-Hermitian matrix 
@@ -18,7 +18,7 @@ function X = generatePositiveDefinite(n, alpha, beta)
 %   Outputs:
 %       X     - A mathematically valid, positive definite @abtessarine matrix.
 %
-%   See also: ABTESSSARINE, SVD, SVDS, CHOL.
+%   See also chol, svd, eig, abtrandn, abteye, abtessarine.
 
     % --- 1. HPC ENVIRONMENT SENSOR & INPUT PARSING ---
     % Allow the user to inject alpha and beta directly. 
