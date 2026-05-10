@@ -47,7 +47,7 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
 
   </details>
 
-* <details open>
+* <details>
   <summary><b>tests/</b> <i>(Validation Framework)</i></summary>
 
   * <details>
