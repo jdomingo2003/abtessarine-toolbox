@@ -162,53 +162,149 @@ The classes `@abtessarine` and `@gabtessarine` overload MATLAB's internal method
 
 ## Quick Start Guide
 
-The global topological environment ($\alpha$ and $\beta$) must be configured before operating. The valid dimensionality of the toolbox depends on the chosen $\alpha$ parameter.
+The `abtessarine_Toolbox` is designed with an intuitive Object-Oriented Architecture, allowing you to operate with hypercomplex numbers and matrices exactly as you would with standard real numbers in MATLAB. 
 
-### Case 1: Operating with $\alpha > 0$ (Supports 4D and 8D Algebras)
-When $\alpha$ is strictly positive, the toolbox supports the core 4D algebra and its full 8D Cayley-Dickson generalization.
+This guide breaks down the fundamental steps, from configuring the topological space to performing advanced spectral factorizations.
 
-    % 1. Configure the environment (e.g., alpha = 2, beta = 4)
-    setabtessarine(2, 4);
+### 1. Global Configuration
+Before defining any hypercomplex variables, the global topological space (defined by $\alpha$ and $\beta$) must be configured. 
 
-    % 2. Generate massive random matrices
-    X = abtrandn(100, 100);    % 4D Standard Normally Distributed Matrix
-    Y = gabtrandn(100, 100);   % 8D Generalized Normally Distributed Matrix
+```matlab
+% Set the global topological parameters (e.g., alpha = -1, beta = 2)
+setabtessarine(-1, 2);
 
-    % 3. Transparently operate (Automatic 4D to 8D upcasting is supported)
-    Z = X * Y;                
-    K = kron(Y, Y);            % 8D Block expansion
+% You can retrieve the current environment parameters at any time
+[alpha, beta] = getabtessarine();
+```
 
-    % 4. Matrix Decompositions and Least Squares
-    [Q, R] = qr(X);            % Orthogonal-triangular decomposition
-    b = abtrandn(100, 1);
-    x = X \ b;                 % Left division / Least-squares WLM solver
+### 2. Working with Scalars (Single Hypercomplex Numbers)
+You don't need to jump straight into matrices. You can instantiate and manipulate single 4D $\alpha\beta$-tessarine numbers using their four real components ($w, x, y, z$).
 
-### Case 2: Operating with $\alpha \le 0$ (Restricted to 4D Algebra)
-When $\alpha$ is negative or zero, the 8D generalization becomes mathematically undefined. The toolbox restricts operations strictly to the core 4D framework.
+```matlab
+% Define individual hypercomplex numbers
+a = abtessarine(1, 2, 3, 4);   % a = 1 + 2i + 3j + 4k
+b = abtessarine(5, -1, 0, 2);  % b = 5 - 1i + 0j + 2k
 
-    % 1. Configure the environment (e.g., alpha = -1, beta = 1)
-    setabtessarine(-1, 1);
+% Standard Arithmetic
+c = a + b;       % Addition
+d = a - b;       % Subtraction
+e = a * b;       % Multiplication (Commutative in 4D!)
+f = a / b;       % Right division (a * inv(b))
 
-    % 2. Generate and operate exclusively with 4D objects
-    A = abtrand(50, 50);
-    B = abtrand(50, 50);
+% Properties and Involutions
+n = norm(a);     % Euclidean norm
+a_conj = a';     % Conjugate (Hermitian transpose for a 1x1 scalar)
+a_i = conj_i(a); % Directional involution along the i-axis
+```
 
-    % 3. Apply Advanced 4D Spectral Theory
-    C = A * B;                 % Native 4D multiplication
-    [L, U, P] = lu(A);         % Hypercomplex LU decomposition
-    invA = inv(A);             % Fast inverse caching
-    [V, D] = eigs(A);          % Dominant eigenvalues and eigenvectors
+### 3. Matrix Construction and Allocation
+The toolbox provides memory-efficient auxiliary generators to easily construct hypercomplex arrays. Furthermore, you can naturally construct and modify matrices element-by-element using standard MATLAB indexing.
 
-    % Note: Attempting to multiply or generate 8D objects (gabtessarine) 
-    % with an alpha <= 0 environment will throw a safety error.
+```matlab
+% Zero-cost memory allocation and identity matrices
+Z = abtzeros(100, 100);    % 100x100 4D zero matrix
+I = abteye(5);             % 5x5 identity matrix
+O = abtones(3, 3);         % 3x3 array of ones
 
-## Illustrative Examples
-For a complete demonstration of the toolbox in action, navigate to the `examples/` directory. The included scripts showcase the software's capabilities across four distinct domains:
+% Random matrix generation (uniform and normal distributions)
+M1 = abtrand(3, 3);
+M2 = abtrandn(3, 3);
 
-* **Signal Processing:** Color image compression via hypercomplex SVD.
-* **Physics & Robotics:** Solving kinematic linear systems under noise.
-* **High-Performance Computing:** Benchmarking native vectorized operations against standard `for`-loops.
-* **Machine Learning:** Fast, derivative-free training of hypercomplex neural networks (ELM classifiers).
+% Element-by-element construction using overloaded indexing
+% (Preallocation with abtzeros is recommended for performance)
+A = abtzeros(2, 2); 
+A(1,1) = abtessarine(1, 2, 3, 4);
+A(1,2) = abtessarine(5, -1, 0, 2);
+A(2,1) = abtessarine(0, 0, 1, -1);
+A(2,2) = A(1,1)';          % Assigning the conjugate of A(1,1)
+
+% Horizontal and Vertical block concatenation
+Concat = [A, abteye(2);          
+          abtzeros(2), A];         
+```
+
+### 4. Matrix Calculus and Spectral Theory (4D)
+A major contribution of this toolbox is the native support for exact hypercomplex matrix decompositions using underlying optimized LAPACK routines.
+
+```matlab
+% Generate random matrices
+A_mat = abtrandn(5, 3);
+SqMat = abtrandn(4, 4);
+
+% 1. Standard Matrix Calculus
+invSq = inv(SqMat);        % Fast matrix inversion
+detSq = det(SqMat);        % Hypercomplex determinant
+trSq  = trace(SqMat);      % Trace
+
+% 2. Decompositions (LU, QR, SVD)
+[L, U, P] = lu(A_mat);     % LU factorization with partial pivoting
+[Q, R]  = qr(A_mat);       % Orthogonal-triangular QR decomposition
+[U_svd, S_svd, V_svd] = svd(A_mat); % Singular Value Decomposition
+
+% Verify the SVD reconstruction accuracy
+A_reconstructed = U_svd * S_svd * V_svd';
+error_norm = norm(A_mat - A_reconstructed);
+disp(['SVD Error: ', num2str(error_norm)]);
+
+% 3. Eigenvalue Problems
+[V_eig, D_eig] = eig(SqMat);  % Full set of eigenvalues/eigenvectors
+
+% For sparse/dominant subset extraction (eigs), the matrix must 
+% exhibit Hermitian symmetry to guarantee convergence:
+SqMat_herm = SqMat + SqMat'; 
+[V_sub, D_sub] = eigs(SqMat_herm, 2);
+```
+
+### 5. 8D Generalized Tessarines (Cayley-Dickson Construction)
+The toolbox seamlessly expands to 8-dimensional non-commutative and non-associative algebras via the `@gabtessarine` class. 
+
+⚠️ **Mathematical Constraint:** The 8D Cayley-Dickson generalization is only mathematically defined when the structural parameter $\alpha$ is strictly positive.
+
+```matlab
+% Reconfigure environment for 8D support (alpha > 0)
+setabtessarine(2, 4);
+
+% 1. Construct an 8D matrix from two existing 4D arrays (Doubling process)
+A_4D = abtrand(3, 3);
+B_4D = abtrand(3, 3);
+G8 = abt2gabt(A_4D, B_4D);
+
+% 2. Instantiate 8D scalars or arrays directly
+h8 = gabtessarine(1, 2, 3, 4, 5, 6, 7, 8); % 8 real components
+H8 = gabteye(3);
+
+% 3. Generalized 8D Matrix Operations
+% The toolbox automatically handles the non-commutative rules internally
+Res_add  = G8 + H8;
+Res_mult = G8 * H8;        % 8D Matrix multiplication
+G8_inv   = inv(G8);        % 8D Matrix inverse
+K_8D     = kron(G8, H8);   % 8D Kronecker tensor product
+
+% Display the internal structure of the resulting 8D object
+disp(K_8D);
+```
+
+## 🔬 Illustrative Examples & Benchmarks
+
+To see the toolbox in action, check out the `examples/` directory. We provide three high-performance signal processing applications that demonstrate its computational speed, mathematical robustness, and scalability:
+
+1. **Color Image In-painting:** Recovers missing pixels in severely damaged images using a Hypercomplex Singular Value Thresholding (SVT) algorithm.
+2. **Global Image Denoising:** Removes Additive White Gaussian Noise (AWGN) from high-resolution images using exact, dense SVD factorizations.
+3. **Digital Image Watermarking:** Embeds invisible, energy-preserving watermarks using the hypercomplex QR decomposition.
+
+### Extreme-Scale Dataset
+We deliberately avoid low-resolution "toy" examples. To truly test memory limits and computational bottlenecks, our examples process massive datasets under real-world conditions:
+
+| Image Name | Native Dimensions | Credit & License | Source Link |
+| :--- | :--- | :--- | :--- |
+| **Autumn Forest** | 5464 × 3640 | Unsplash (ML6kHR--Uys) | [View Source](https://unsplash.com/es/fotos/un-bosque-lleno-de-muchos-arboles-de-diferentes-colores-ML6kHR--Uys) |
+| **Modern Architecture** | 3911 × 5867 | Unsplash (Opwvoz9zwYk) | [View Source](https://unsplash.com/es/fotos/un-edificio-muy-alto-con-muchas-ventanas-Opwvoz9zwYk) |
+| **San Francisco** | 5304 × 7952 | Unsplash (o8Utw2ETExA) | [View Source](https://unsplash.com/es/fotos/puente-golden-state-san-francisco-o8Utw2ETExA) |
+| **Carina Nebula** | 14575 × 8441 | NASA/ESA/CSA/STScI (Public Domain) | [View Source](https://science.nasa.gov/asset/webb/cosmic-cliffs-in-the-carina-nebula-nircam-image/) |
+
+> 💡 **Why this matters (The Carina Nebula Test):** > Processing the *Carina Nebula* (~123 megapixels) with traditional **quaternion** algorithms requires generating a massive $29150 \times 16882$ complex matrix. This consumes **~7.33 GB of RAM** just to store the inputs, frequently crashing standard workstations with Out-Of-Memory (OOM) errors. 
+> 
+> By leveraging the idempotent representation of commutative **tessarines**, this toolbox mathematically decouples the problem. This **cuts the memory footprint by more than half**, enabling ultra-high-resolution tensor processing on standard commodity hardware.
 
 ## Theoretical Background and Citation
 This software is the computational implementation of the theoretical methods described in the accompanying research paper. The algorithms strictly follow the algebraic rules and properties derived for $\alpha\beta$-tessarine spectral theory, including eigendecompositions, isomorphisms, and least squares problem solvers.
