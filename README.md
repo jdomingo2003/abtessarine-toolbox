@@ -59,7 +59,7 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
     * `test_04_gabtessarine_algebra.m`
     </details>
 
-  * <details open>
+  * <details>
     <summary><b>individual_tests/</b> <i>(Unit-level verification)</i></summary>
 
     * <details>
