@@ -316,5 +316,16 @@ https://doi.org/10.48550/arXiv.2508.02709
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
+## ⚖️ Copyright and Dual-Licensing Model
+
+**Copyright (c) 2026 José Domingo Jiménez-López, Jesús Navarro-Moreno, Juan Carlos Ruiz-Molina. All rights reserved.**
+
+This software is released to the academic and scientific community under the **GNU General Public License v3.0 (GPL-3.0)**. 
+
+Under this license, you are free to use, modify, and distribute the software for academic research, education, and open-source projects, provided that any derivative work is also released under the strictly open-source GPL-3.0 license (see the [LICENSE](LICENSE.txt) file for full details).
+
+### Commercial Licensing
+The owner retains the full copyright of this software. The "copyleft" nature of the GPL-3.0 license **strictly prohibits the integration of this toolbox into closed-source, proprietary, or commercial software** (e.g., embedding it into proprietary platforms) without legally exposing the proprietary source code to the public.
+
+If you represent a corporation or entity interested in embedding, integrating, or commercially distributing the `abtessarine_Toolbox` without being subject to the GPL-3.0 restrictions, a **Commercial License** must be acquired directly from the copyright holder.
 
