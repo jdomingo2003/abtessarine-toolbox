@@ -134,6 +134,42 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
 
       </details>
 
+    * * <details>
+  <summary><b>tests/</b> <i>(Validation Framework)</i></summary>
+
+  * <details>
+    <summary><b>general_tests/</b> <i>(High-level algebraic & stress tests)</i></summary>
+
+    * [`test_01_CORE_properties.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general_tests/test_01_CORE_properties.m)
+    * [`test_02_matrix_calculus.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general_tests/test_02_matrix_calculus.m)
+    * [`test_03_advanced_factorizations.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general_tests/test_03_advanced_factorizations.m)
+    * [`test_04_gabtessarine_algebra.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general_tests/test_04_gabtessarine_algebra.m)
+    </details>
+
+  * <details>
+    <summary><b>individual_tests/</b> <i>(Unit-level verification)</i></summary>
+
+    * <details>
+      <summary>📂 <b>tests_@abtessarine/</b> <i>(Contains unit tests for all 4D methods)</i></summary>
+
+      | | | | |
+      | :--- | :--- | :--- | :--- |
+      | [`test_abtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_abtessarine.m) | [`test_associated.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_associated.m) | [`test_augmented.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_augmented.m) | [`test_cat.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_cat.m) |
+      | [`test_chol.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_chol.m) | [`test_conj_i.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_conj_i.m) | [`test_conj_j.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_conj_j.m) | [`test_conj_k.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_conj_k.m) |
+      | [`test_ctranspose.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_ctranspose.m) | [`test_det.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_det.m) | [`test_diag.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_diag.m) | [`test_diff.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_diff.m) |
+      | [`test_disp.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_disp.m) | [`test_eig.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_eig.m) | [`test_eigs.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_eigs.m) | [`test_hermitian.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_hermitian.m) |
+      | [`test_horzcat.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_horzcat.m) | [`test_inv.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_inv.m) | [`test_kron.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_kron.m) | [`test_length.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_length.m) |
+      | [`test_lu.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_lu.m) | [`test_minus.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_minus.m) | [`test_mldivide.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_mldivide.m) | [`test_mpower.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_mpower.m) |
+      | [`test_mrdivide.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_mrdivide.m) | [`test_mtimes.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_mtimes.m) | [`test_ndims.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_ndims.m) | [`test_norm.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_norm.m) |
+      | [`test_permute.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_permute.m) | [`test_pinv.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_pinv.m) | [`test_plus.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_plus.m) | [`test_power.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_power.m) |
+      | [`test_prod.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_prod.m) | [`test_qr.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_qr.m) | [`test_repmat.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_repmat.m) | [`test_reshape.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_reshape.m) |
+      | [`test_size.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_size.m) | [`test_sqrtm.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_sqrtm.m) | [`test_squeeze.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_squeeze.m) | [`test_subsasgn.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_subsasgn.m) |
+      | [`test_subsref.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_subsref.m) | [`test_sum.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_sum.m) | [`test_svd.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_svd.m) | [`test_svds.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_svds.m) |
+      | [`test_times.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_times.m) | [`test_trace.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_trace.m) | [`test_transpose.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_transpose.m) | [`test_uminus.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_uminus.m) |
+      | [`test_uplus.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_uplus.m) | [`test_vertcat.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/individual_tests/tests_@abtessarine/test_vertcat.m) | | |
+
+      </details>
+
     * <details>
       <summary>📂 <b>tests_@gabtessarine/</b> <i>(Contains unit tests for all 8D methods)</i></summary>
 
