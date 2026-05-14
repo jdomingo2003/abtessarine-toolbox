@@ -14,38 +14,77 @@ Furthermore, the toolbox extends this mathematical framework to an 8-dimensional
 
 To maintain a clean architecture, the toolbox is structured into core classes, root-level generators, and a dual-tier validation suite.
 
+### 📂 Toolbox Structure and Contents
+
+**Environment Configuration & Matrix Generation**
+* [`setabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/setabtessarine.m) — *Configures global alpha/beta parameters for the HPC environment.*
+* [`getabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/getabtessarine.m) — *Retrieves current alpha/beta configuration and environment state.*
+* [`abteye.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abteye.m), [`gabteye.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabteye.m) — *Creates an abtessarine or gabtessarine identity matrix.*
+* [`abtzeros.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtzeros.m), [`gabtzeros.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtzeros.m) — *Creates an abtessarine or gabtessarine zeros array.*
+* [`abtones.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtones.m) — *Creates an abtessarine array of ones.*
+* [`abtrand.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtrand.m), [`gabtrand.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtrand.m) — *Uniformly distributed random matrices.*
+* [`abtrandn.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtrandn.m), [`gabtrandn.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtrandn.m) — *Normally distributed random matrices.*
+* [`abt2gabt.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abt2gabt.m) — *Constructs an 8D gabtessarine from two abtessarine objects.*
+* [`abtpdm.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtpdm.m) — *Generates random Hermitian positive definite abtessarine matrices.*
+
 * <details>
   <summary><b>@abtessarine/</b> <i>(Core 4D Parametric Tessarine Class)</i></summary>
 
-  | | | | |
-  | :--- | :--- | :--- | :--- |
-  | `abtessarine` | `associated` | `augmented` | `cat` |
-  | `chol` | `conj_i` | `conj_j` | `conj_k` |
-  | `ctranspose` | `det` | `diag` | `diff` |
-  | `disp` | `eig` | `eigs` | `hermitian` |
-  | `horzcat` | `inv` | `kron` | `length` |
-  | `lu` | `minus` | `mldivide` | `mpower` |
-  | `mrdivide` | `mtimes` | `ndims` | `norm` |
-  | `permute` | `pinv` | `plus` | `power` |
-  | `prod` | `qr` | `repmat` | `reshape` |
-  | `size` | `sqrtm` | `squeeze` | `subsasgn` |
-  | `subsref` | `sum` | `svd` | `svds` |
-  | `times` | `trace` | `transpose` | `uminus` |
-  | `uplus` | `vertcat` | | |
+  | Function | Description |
+  | :--- | :--- |
+  | [`abtessarine`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/abtessarine.m) | Constructor for the 4-dimensional alpha-beta tessarine object. |
+  | [`associated`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/associated.m) | Computes the real/complex isomorphic matrix representation. |
+  | [`augmented`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/augmented.m) | Constructs the augmented covariance matrix for WL modeling. |
+  | [`cat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/cat.m) | Concatenate arrays along specified dimension. |
+  | [`chol`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/chol.m) | Cholesky factorization for Hermitian positive definite matrices. |
+  | [`conj_i`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/conj_i.m) | Directional involution along the i-axis. |
+  | [`conj_j`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/conj_j.m) | Directional involution along the j-axis. |
+  | [`conj_k`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/conj_k.m) | Directional involution along the k-axis. |
+  | [`ctranspose`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/ctranspose.m) | Conjugate (Hermitian) transposition (`'`). |
+  | [`det`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/det.m) | Isomorphic matrix determinant. |
+  | [`diag`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/diag.m) | Diagonal elements or construct diagonal matrices. |
+  | [`diff`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/diff.m) | Differences and approximate derivatives. |
+  | [`disp`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/disp.m) | Formatted console display. |
+  | [`eig`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/eig.m) | Full eigenvalues and eigenvectors computation. |
+  | [`eigs`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/eigs.m) | Subset of eigenvalues and eigenvectors for large matrices. |
+  | [`hermitian`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/hermitian.m) | Parameterized Hermitian transposition. |
+  | [`horzcat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/horzcat.m) | Horizontal concatenation (`[,]`). |
+  | [`inv`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/inv.m) | Matrix inverse via L1 cache-optimized algorithms. |
+  | [`kron`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/kron.m) | Kronecker tensor product. |
+  | [`length`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/length.m) | Length of longest array dimension. |
+  | [`lu`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/lu.m) | LU factorization with hypercomplex partial pivoting. |
+  | [`minus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/minus.m) | Subtraction (`-`). |
+  | [`mldivide`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/mldivide.m) | Left matrix division (`\`). |
+  | [`mpower`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/mpower.m) | Matrix power (`^`). |
+  | [`mrdivide`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/mrdivide.m) | Right matrix division (`/`). |
+  | [`mtimes`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/mtimes.m) | Matrix multiplication (`*`). |
+  | [`ndims`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/ndims.m) | Number of array dimensions. |
+  | [`norm`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/norm.m) | Matrix or vector norms. |
+  | [`permute`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/permute.m) | Reorder dimensions of N-D arrays. |
+  | [`pinv`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/pinv.m) | Moore-Penrose pseudoinverse via SVD. |
+  | [`plus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/plus.m) | Addition (`+`). |
+  | [`power`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/power.m) | Array power (`.^`). |
+  | [`prod`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/prod.m) | Product of elements along dimensions. |
+  | [`qr`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/qr.m) | Orthogonal-triangular QR decomposition. |
+  | [`repmat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/repmat.m) | Replicate and tile matrices. |
+  | [`reshape`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/reshape.m) | Change shape of array without changing data. |
+  | [`size`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/size.m) | Array dimensions. |
+  | [`sqrtm`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/sqrtm.m) | Principal matrix square root. |
+  | [`squeeze`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/squeeze.m) | Remove singleton dimensions. |
+  | [`subsasgn`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/subsasgn.m) | Subscripted assignment `X(i,j) = Y`. |
+  | [`subsref`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/subsref.m) | Subscripted reference `Y = X(i,j)`. |
+  | [`sum`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/sum.m) | Sum of elements along dimensions. |
+  | [`svd`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/svd.m) | Singular value decomposition. |
+  | [`svds`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/svds.m) | Subset of singular values and vectors. |
+  | [`times`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/times.m) | Array multiplication (`.*`). |
+  | [`trace`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/trace.m) | Sum of diagonal elements. |
+  | [`transpose`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/transpose.m) | Geometric non-conjugate transposition (`.'`). |
+  | [`uminus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/uminus.m) | Unary minus (`-`). |
+  | [`uplus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/uplus.m) | Unary plus (`+`). |
+  | [`vertcat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@abtessarine/vertcat.m) | Vertical concatenation (`[;]`). |
 
   </details>
 
-* <details>
-  <summary><b>@gabtessarine/</b> <i>(Generalized 8D Hypercomplex Class)</i></summary>
-
-  | | | | |
-  | :--- | :--- | :--- | :--- |
-  | `disp` | `gabtessarine` | `horzcat` | `inv` |
-  | `kron` | `minus` | `mtimes` | `plus` |
-  | `size` | `sqrtm` | `subsasgn` | `subsref` |
-  | `times` | `uminus` | `vertcat` | |
-
-  </details>
 
 * <details>
   <summary><b>tests/</b> <i>(Validation Framework)</i></summary>
@@ -116,16 +155,28 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
   * `example_4.m` *(Machine Learning: Fast analytical training of ELM classifiers)*
   </details>
 
-* `setabtessarine.m` *(Global topological parameter configuration)*
-* `getabtessarine.m` *(Retrieves current global parameters)*
-* `abteye.m`, `gabteye.m` *(Identity matrices generation)*
-* `abtzeros.m`, `gabtzeros.m` *(Zero-cost memory allocation)*
-* `abtones.m` *(Arrays of ones)*
-* `abtrand.m`, `gabtrand.m` *(Uniformly distributed random arrays)*
-* `abtrandn.m`, `gabtrandn.m` *(Normally distributed random arrays)*
-* `abt2gabt.m` *(Constructs 8D Cayley-Dickson matrices from 4D arrays)*
-* `abtpdm.m` *(Generates positive-definite hypercomplex matrices)*
+* <details>
+  <summary><b>@gabtessarine/</b> <i>(Generalized 8D Hypercomplex Class)</i></summary>
 
+  | Function | Description |
+  | :--- | :--- |
+  | [`gabtessarine`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/gabtessarine.m) | Constructor for the 8-dimensional generalized object. |
+  | [`disp`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/disp.m) | 8D formatted console display. |
+  | [`horzcat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/horzcat.m) | 8D horizontal concatenation. |
+  | [`inv`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/inv.m) | Computes the 8D inverse matrix. |
+  | [`kron`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/kron.m) | 8D Kronecker tensor product. |
+  | [`minus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/minus.m) | 8D subtraction. |
+  | [`mtimes`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/mtimes.m) | 8D matrix multiplication. |
+  | [`plus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/plus.m) | 8D addition. |
+  | [`size`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/size.m) | 8D array dimensions. |
+  | [`sqrtm`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/sqrtm.m) | Computes the 8D principal matrix square root. |
+  | [`subsasgn`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/subsasgn.m) | 8D subscripted assignment. |
+  | [`subsref`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/subsref.m) | 8D subscripted reference. |
+  | [`times`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/times.m) | 8D array multiplication. |
+  | [`uminus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/uminus.m) | 8D unary minus. |
+  | [`vertcat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/vertcat.m) | 8D vertical concatenation. |
+
+  </details>
 ## Comprehensive Capabilities
 
 ### 1. Matrix Generation & Environment Control
