@@ -159,14 +159,14 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
   </details>
 
 * <details>
-  <summary><b>examples/</b> <i>(Application Tutorials)</i></summary>
+  <summary><b>examples/</b> <i>(Application Tutorials & Benchmarks)</i></summary>
 
   | Script | Description |
   | :--- | :--- |
-  | [`example_1.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/examples/example_1.m) | Signal Processing: Color image compression via hypercomplex SVD |
-  | [`example_2.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/examples/example_2.m) | Physics & Robotics: Solving kinematic linear systems under noise |
-  | [`example_3.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/examples/example_3.m) | High-Performance Computing: Scalability benchmark vs for-loops |
-  | [`example_4.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/examples/example_4.m) | Machine Learning: Fast analytical training of ELM classifiers |
+  | [`example11_inpainting_San_Francisco.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/examples/example11_inpainting_San_Francisco.m) | **Color Image In-painting (Exp I):** Recovers missing pixels in severely damaged images using a Hypercomplex Singular Value Thresholding (SVT) algorithm. |
+  | [`example12_inpainting_Autumn_Forest.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/examples/example12_inpainting_Autumn_Forest.m) | **Color Image In-painting (Exp II):** Recovers missing pixels in severely damaged images using a Hypercomplex Singular Value Thresholding (SVT) algorithm. |
+  | [`example2_denoising.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/examples/example2_denoising.m) | **Global Image Denoising:** Removes Additive White Gaussian Noise (AWGN) from high-resolution images using exact, dense SVD factorizations. |
+  | [`example3_watermarked.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/examples/example3_watermarked.m) | **Digital Image Watermarking:** Embeds invisible, energy-preserving watermarks using the hypercomplex QR decomposition. |
 
   </details>
 * [`setabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/setabtessarine.m) — *Configures global alpha/beta parameters for the HPC environment.*
