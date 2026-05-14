@@ -140,10 +140,10 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
   * <details>
     <summary><b>general_tests/</b> <i>(High-level algebraic & stress tests)</i></summary>
 
-    * [`test_01_CORE_properties.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general_tests/test_01_CORE_properties.m)
-    * [`test_02_matrix_calculus.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general_tests/test_02_matrix_calculus.m)
-    * [`test_03_advanced_factorizations.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general_tests/test_03_advanced_factorizations.m)
-    * [`test_04_gabtessarine_algebra.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general_tests/test_04_gabtessarine_algebra.m)
+    * [`test_01_CORE_AND_SHAPE.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general%20tests/test_01_CORE_AND_SHAPE.m)
+    * [`test_02_ARITHMETIC_AND_CONJUGATIONS.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general%20tests/test_02_ARITHMETIC_AND_CONJUGATIONS.m)
+    * [`test_03_LINEAR_ALGEBRA.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general%20tests/test_03_LINEAR_ALGEBRA.m)
+    * [`test_04_GABTESSARINE.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/tests/general%20tests/test_04_GABTESSARINE.m)
     </details>
 
   * <details>
