@@ -17,16 +17,6 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
 ### 📂 Toolbox Structure and Contents
 
 **Environment Configuration & Matrix Generation**
-* [`setabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/setabtessarine.m) — *Configures global alpha/beta parameters for the HPC environment.*
-* [`getabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/getabtessarine.m) — *Retrieves current alpha/beta configuration and environment state.*
-* [`abteye.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abteye.m), [`gabteye.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabteye.m) — *Creates an abtessarine or gabtessarine identity matrix.*
-* [`abtzeros.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtzeros.m), [`gabtzeros.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtzeros.m) — *Creates an abtessarine or gabtessarine zeros array.*
-* [`abtones.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtones.m) — *Creates an abtessarine array of ones.*
-* [`abtrand.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtrand.m), [`gabtrand.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtrand.m) — *Uniformly distributed random matrices.*
-* [`abtrandn.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtrandn.m), [`gabtrandn.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtrandn.m) — *Normally distributed random matrices.*
-* [`abt2gabt.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abt2gabt.m) — *Constructs an 8D gabtessarine from two abtessarine objects.*
-* [`abtpdm.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtpdm.m) — *Generates random Hermitian positive definite abtessarine matrices.*
-
 * <details>
   <summary><b>@abtessarine/</b> <i>(Core 4D Parametric Tessarine Class)</i></summary>
 
@@ -85,6 +75,28 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
 
   </details>
 
+* <details>
+  <summary><b>@gabtessarine/</b> <i>(Generalized 8D Hypercomplex Class)</i></summary>
+
+  | Function | Description |
+  | :--- | :--- |
+  | [`gabtessarine`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/gabtessarine.m) | Constructor for the 8-dimensional generalized object. |
+  | [`disp`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/disp.m) | 8D formatted console display. |
+  | [`horzcat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/horzcat.m) | 8D horizontal concatenation. |
+  | [`inv`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/inv.m) | Computes the 8D inverse matrix. |
+  | [`kron`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/kron.m) | 8D Kronecker tensor product. |
+  | [`minus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/minus.m) | 8D subtraction. |
+  | [`mtimes`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/mtimes.m) | 8D matrix multiplication. |
+  | [`plus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/plus.m) | 8D addition. |
+  | [`size`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/size.m) | 8D array dimensions. |
+  | [`sqrtm`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/sqrtm.m) | Computes the 8D principal matrix square root. |
+  | [`subsasgn`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/subsasgn.m) | 8D subscripted assignment. |
+  | [`subsref`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/subsref.m) | 8D subscripted reference. |
+  | [`times`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/times.m) | 8D array multiplication. |
+  | [`uminus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/uminus.m) | 8D unary minus. |
+  | [`vertcat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/vertcat.m) | 8D vertical concatenation. |
+
+  </details>
 
 * <details>
   <summary><b>tests/</b> <i>(Validation Framework)</i></summary>
@@ -154,29 +166,16 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
   * `example_3.m` *(High-Performance Computing: Scalability benchmark vs for-loops)*
   * `example_4.m` *(Machine Learning: Fast analytical training of ELM classifiers)*
   </details>
+* [`setabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/setabtessarine.m) — *Configures global alpha/beta parameters for the HPC environment.*
+* [`getabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/getabtessarine.m) — *Retrieves current alpha/beta configuration and environment state.*
+* [`abteye.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abteye.m), [`gabteye.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabteye.m) — *Creates an abtessarine or gabtessarine identity matrix.*
+* [`abtzeros.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtzeros.m), [`gabtzeros.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtzeros.m) — *Creates an abtessarine or gabtessarine zeros array.*
+* [`abtones.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtones.m) — *Creates an abtessarine array of ones.*
+* [`abtrand.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtrand.m), [`gabtrand.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtrand.m) — *Uniformly distributed random matrices.*
+* [`abtrandn.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtrandn.m), [`gabtrandn.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtrandn.m) — *Normally distributed random matrices.*
+* [`abt2gabt.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abt2gabt.m) — *Constructs an 8D gabtessarine from two abtessarine objects.*
+* [`abtpdm.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtpdm.m) — *Generates random Hermitian positive definite abtessarine matrices.*
 
-* <details>
-  <summary><b>@gabtessarine/</b> <i>(Generalized 8D Hypercomplex Class)</i></summary>
-
-  | Function | Description |
-  | :--- | :--- |
-  | [`gabtessarine`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/gabtessarine.m) | Constructor for the 8-dimensional generalized object. |
-  | [`disp`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/disp.m) | 8D formatted console display. |
-  | [`horzcat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/horzcat.m) | 8D horizontal concatenation. |
-  | [`inv`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/inv.m) | Computes the 8D inverse matrix. |
-  | [`kron`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/kron.m) | 8D Kronecker tensor product. |
-  | [`minus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/minus.m) | 8D subtraction. |
-  | [`mtimes`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/mtimes.m) | 8D matrix multiplication. |
-  | [`plus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/plus.m) | 8D addition. |
-  | [`size`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/size.m) | 8D array dimensions. |
-  | [`sqrtm`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/sqrtm.m) | Computes the 8D principal matrix square root. |
-  | [`subsasgn`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/subsasgn.m) | 8D subscripted assignment. |
-  | [`subsref`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/subsref.m) | 8D subscripted reference. |
-  | [`times`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/times.m) | 8D array multiplication. |
-  | [`uminus`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/uminus.m) | 8D unary minus. |
-  | [`vertcat`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/@gabtessarine/vertcat.m) | 8D vertical concatenation. |
-
-  </details>
 ## Comprehensive Capabilities
 
 ### 1. Matrix Generation & Environment Control
