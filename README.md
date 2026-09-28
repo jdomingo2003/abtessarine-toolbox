@@ -350,9 +350,9 @@ We deliberately avoid low-resolution "toy" examples. To truly test memory limits
 
 | Image Name | Native Dimensions | Credit & License | Source Link |
 | :--- | :--- | :--- | :--- |
-| **Autumn Forest** | 5464 × 3640 | Unsplash (ML6kHR--Uys) | [View Source](https://unsplash.com/es/fotos/un-bosque-lleno-de-muchos-arboles-de-diferentes-colores-ML6kHR--Uys) |
+| **Autumn Forest** | 3640 × 5464 | Unsplash (ML6kHR--Uys) | [View Source](https://unsplash.com/es/fotos/un-bosque-lleno-de-muchos-arboles-de-diferentes-colores-ML6kHR--Uys) |
 | **Modern Architecture** | 3911 × 5867 | Unsplash (Opwvoz9zwYk) | [View Source](https://unsplash.com/es/fotos/un-edificio-muy-alto-con-muchas-ventanas-Opwvoz9zwYk) |
-| **San Francisco** | 5304 × 7952 | Unsplash (o8Utw2ETExA) | [View Source](https://unsplash.com/es/fotos/puente-golden-state-san-francisco-o8Utw2ETExA) |
+| **San Francisco** | 7952 × 5304 | Unsplash (o8Utw2ETExA) | [View Source](https://unsplash.com/es/fotos/puente-golden-state-san-francisco-o8Utw2ETExA) |
 | **Carina Nebula** | 14575 × 8441 | NASA/ESA/CSA/STScI (Public Domain) | [View Source](https://science.nasa.gov/asset/webb/cosmic-cliffs-in-the-carina-nebula-nircam-image/) |
 
 > 💡 **Why this matters (The Carina Nebula Test):** > Processing the *Carina Nebula* (~123 megapixels) with traditional **quaternion** algorithms requires generating a massive $29150 \times 16882$ complex matrix. This consumes **~7.33 GB of RAM** just to store the inputs, frequently crashing standard workstations with Out-Of-Memory (OOM) errors. 
