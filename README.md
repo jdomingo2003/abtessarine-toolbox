@@ -367,15 +367,7 @@ If you use this toolbox in your research, please cite the following publication:
 > **Jiménez-López, J. D., Navarro-Moreno, J., Fernández-Alcalá, R. M., & Ruiz-Molina, J. C.** (in press). *Advancing Computational Tools for Analyzing Commutative Hypercomplex Algebras*. Computational and Applied Mathematics. Preprint en arXiv:2508.02709. 
 > https://doi.org/10.48550/arXiv.2508.02709
 
-### BibTeX
-```bibtex
-@article{jimenez2025advancing,
-  title={Advancing Computational Tools for Analyzing Commutative Hypercomplex Algebras},
-  author={Jim{\'e}nez-L{\'o}pez, J.D. and Navarro-Moreno, J. and Fern{\'a}ndez-Alcal{\'a}, R.M. and Ruiz-Molina, J.C.},
-  journal={Computational and Applied Mathematics},
-  year={2025},
-  note={In press. Preprint: arXiv:2508.02709}
-}
+
 
 ## License
 
