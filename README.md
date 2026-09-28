@@ -18,7 +18,7 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
 
 **Environment Configuration & Matrix Generation**
 * <details>
-  <summary><b>@abtessarine/</b> <i>(Core 4D Parametric Tessarine Class)</i></summary>
+  <summary><b>@abtessarine/</b> <i>(Core 4D Parametric $(\alpha\beta)$-Tessarine Class)</i></summary>
 
   | Function | Description |
   | :--- | :--- |
