@@ -6,7 +6,7 @@
 ## Overview
 The **abtessarine_Toolbox** is a high-performance, object-oriented MATLAB library designed for the analysis and manipulation of commutative hypercomplex algebras. 
 
-This toolbox provides a robust computational framework for **$(\alpha\beta)$-tessarines** ($\alpha \in \mathbb{R}\setminus\{0\}, \beta > 0$), a 4-dimensional hypercomplex algebra that encompasses generalized Segre's quaternions (GSQ) and elliptic quaternions as particular cases. Unlike traditional non-commutative quaternions, tessarines preserve both commutativity and associativity, which significantly enhances their compatibility with advanced linear algebra methods and spectral theory. 
+This toolbox provides a robust computational framework for **$(\beta)$-tessarines** ($\alpha \in \mathbb{R}\setminus\{0\}, \beta > 0$), a 4-dimensional hypercomplex algebra that encompasses generalized Segre's quaternions (GSQ) and elliptic quaternions as particular cases. Unlike traditional non-commutative quaternions, tessarines preserve both commutativity and associativity, which significantly enhances their compatibility with advanced linear algebra methods and spectral theory. 
 
 Furthermore, the toolbox extends this mathematical framework to an 8-dimensional algebra known as **generalized $(\alpha\beta)$-tessarines** ($\mathbb{G}_{\alpha\beta}$) via the Cayley-Dickson construction ($x = x_1 + x_2 \epsilon$, where $\epsilon^2 = -1$).
 
@@ -169,7 +169,7 @@ To maintain a clean architecture, the toolbox is structured into core classes, r
   | [`example3_watermarked.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/examples/example3_watermarked.m) | **Digital Image Watermarking:** Embeds invisible, energy-preserving watermarks using the hypercomplex QR decomposition. |
 
   </details>
-* [`setabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/setabtessarine.m) — *Configures global alpha/beta parameters for the HPC environment.*
+* [`setabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/setabtessarine.m) — *Configures global $\alpha,\beta$ parameters for the HPC environment.*
 * [`getabtessarine.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/getabtessarine.m) — *Retrieves current alpha/beta configuration and environment state.*
 * [`abteye.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abteye.m), [`gabteye.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabteye.m) — *Creates an abtessarine or gabtessarine identity matrix.*
 * [`abtzeros.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/abtzeros.m), [`gabtzeros.m`](https://github.com/jdomingo2003/abtessarine-toolbox/blob/main/gabtzeros.m) — *Creates an abtessarine or gabtessarine zeros array.*
@@ -231,7 +231,7 @@ setabtessarine(-1, 2);
 ```
 
 ### 2. Working with Scalars (Single Hypercomplex Numbers)
-You don't need to jump straight into matrices. You can instantiate and manipulate single 4D $\alpha\beta$-tessarine numbers using their four real components ($w, x, y, z$).
+You don't need to jump straight into matrices. You can instantiate and manipulate single 4D $(\alpha\beta)$-tessarine numbers using their four real components ($w, x, y, z$).
 
 ```matlab
 % Define individual hypercomplex numbers
@@ -360,7 +360,7 @@ We deliberately avoid low-resolution "toy" examples. To truly test memory limits
 > By leveraging the idempotent representation of commutative **tessarines**, this toolbox mathematically decouples the problem. This **cuts the memory footprint by more than half**, enabling ultra-high-resolution tensor processing on standard commodity hardware.
 
 ## Theoretical Background and Citation
-This software is the computational implementation of the theoretical methods described in the accompanying research paper. The algorithms strictly follow the algebraic rules and properties derived for $\alpha\beta$-tessarine spectral theory, including eigendecompositions, isomorphisms, and least squares problem solvers.
+This software is the computational implementation of the theoretical methods described in the accompanying research paper. The algorithms strictly follow the algebraic rules and properties derived for $(\alpha\beta)$-tessarine spectral theory, including eigendecompositions, isomorphisms, and least squares problem solvers.
 
 If you use this toolbox in your research, please cite the following publication:
 
